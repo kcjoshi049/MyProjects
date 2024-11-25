@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geeksforgeeks</title>
+    <link rel="stylesheet" href="form.css">
+
+<body>
+    <form action="https://signin.com/login" name="MyForm" method="post">
+        <div class="container">
+            <h3>Please login to continue</h3>
+            <div class="box">
+                <div class="action">
+                    <div class="login">
+                        Log In
+                    </div>
+                    <div class="signup">
+                        Sign Up
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="userdetail">
+                        <div class="usermail">
+                            <img src="person-circle.svg" alt="img">
+                            <input type="text" name="usermail" id="mail" placeholder="Username or E-mail" required minlength="15">
+                        </div>
+                        <div class="password">
+                            <img src="lock-fill.svg" alt="img" class="img1">
+                            <input type="password" name="userpass" id="pass" placeholder="Password" required minlength="8">
+                            <img src="eye-slash-fill.svg" alt="img" class="img2">
+                        </div>
+                        <div class="institute">
+                            <img src="bank.svg" alt="img">
+                            <input type="text" name="userinstitute" placeholder="Institute / Organization" minlength="5" id="ins">
+                        </div>
+                        <div class="rem">
+                            <div class="rem1">
+                                <input type="checkbox" name="check" id="remb">
+                                <label for="remb">Remember me</label>
+                            </div>
+                            <a href="#">Forgot password</a>
+                        </div>
+                        <div class="robot">
+                            <div class="checkbox">
+                                <img src="checkicon.svg" alt="gif" id="robovalid">
+                                <div id="chitti"></div>
+                                <div id="loader"></div>
+                                <label for="chitti">I'am not a robot</label>
+                            </div>
+                            <div class="captcha">
+                                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="captcha">
+                                <span class="s1">reCAPTCHA</span>
+                                <span class="s2">Privacy-Terms</span>
+                            </div>
+                        </div>
+                        <div class="sub">
+                            <input type="submit" value="Sign In">
+                        </div>
+                    </div>
+                    <div class="or">
+                        <div class="or1"></div>
+                        <div>or</div>
+                        <div class="or2"></div>
+                    </div>
+                    <div class="plateform">
+                        <div class="first">
+                            <button class="google">
+                                <img src="google.svg" alt="img">
+                                <a href="google.com">Google</a>
+                            </button>
+                            <button class="facebook">
+                                <img src="facebook.svg" alt="img">
+                                <a href="facebook.com">&nbsp;&nbsp;Facebook</a>
+                            </button>
+                        </div>
+                        <div class="second">
+                            <button class="linkedin">
+                                <img src="linkedin.svg" alt="img">
+                                <a href="linkedin.com">&nbsp;&nbsp;LinkeDin</a>
+                            </button>
+                            <button class="github">
+                                <img src="github.svg" alt="img">
+                                <a href="github.com">GitHub</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lastline">
+                        <a href="#">Why Create an Account?</a>
+                    </div>
+                    <div class="policy">
+                        <p>By creating this account, you agree to our <span><a href="#">Privacy Policy</a></span> &
+                            <span><a href="#">Cookie Policy</a></span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="form.js">
+
+    </script>
+</body>
+
+</html>

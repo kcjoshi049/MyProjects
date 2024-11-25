@@ -1,0 +1,318 @@
+.container{
+    border:2px solid black;
+    max-width:30vw;
+    min-height: 60vh;
+    border-radius:10px;
+    padding:20px;
+    background-color:rgba(135, 207, 235, 0.249);
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: RobotoDraft, Roboto, "Helvetica Neue, Helvetica, Arial", sans-serif;
+}
+.method{
+    display:flex;
+    justify-content: space-between;
+    font-size:25px;
+    color:rgba(0, 0, 0, 0.715);
+    margin-top:0px;
+}
+.signin,.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    margin-top:0px;
+    margin-bottom: 10px;
+    font-size:20px;
+    color:rgba(0, 0, 0, 0.668);
+}
+.box{
+    background-color: white;
+    padding:15px;
+    border:1px solid white;
+    border-radius: 10px;
+}
+.userdetail{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box2{
+    border:1px solid rgba(0, 0, 0, 0.18);
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-top:none;
+    height: auto;
+    padding-top:25px;
+}
+.rem{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    width:360px;
+    font-size:14px;
+    margin-bottom: 15px;
+}
+.rem1{
+    width:110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:13px;
+}
+.usermail input,.password input,.institute input{
+    width:310px;
+    height: 40px;
+    border:1px solid rgba(0, 0, 0, 0.852);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding:5px;
+    border-left:none;
+    font-size:15px;
+}
+::placeholder{
+    color:black;
+}
+.usermail img,.img1,.institute img{
+    width:20px;
+    height: 30px;
+    border:1px solid rgba(0, 0, 0, 0.852);
+    padding:10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+}
+.usermail,.password,.institute{
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+.sub>input{
+    width:360px;
+    height: 35px;
+    font-size:15px;
+    background-color: rgb(2, 145, 2);
+    color:white;
+    border-radius: 5px;
+}
+.sub{
+    margin-bottom: 15px;
+}
+.plateform{
+    width:300px;
+    padding-left:25px;
+    margin-left:-30px;
+}
+button{
+    width:130px;
+    height: 40px;
+    border-radius:5px;
+}
+button>a{
+    color:white;
+}
+a{
+    text-decoration: none;
+}
+.first,.second{
+    width:300px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:15px;
+}
+.google{
+    background-color: #dd4b39;
+    border:1px solid #dd4b39;
+}
+.facebook{
+    background-color: #3b5998;
+    border:1px solid #3b5998;
+}
+.linkedin{
+    background-color: rgb(49, 49, 213);
+    border:1px solid rgb(49,49,213);
+}
+.github{
+    background-color: black;
+    border:1px solid black;
+}
+.lastline > a{
+    color:rgb(30, 213, 30);
+    font-weight: bolder;
+    font-size:17px;
+}
+.google,.github,.facebook,.linkedin{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:0px;
+}
+button:hover{
+    background-color: green;
+}
+.google>img,.github>img,.facebook>img,.linkedin>img{
+    width:20px;
+    height: 20px;
+    border-right:1px solid black;
+    padding:8px;
+    margin-left:-10px;
+}
+.google>img,.github>img{
+    margin-left:-20px;
+}
+.google>a,.github>a,.facebook>a,.linkedin>a{
+    font-size:15px;
+}
+.lastline{
+    margin-top:10px;
+}
+span>a{
+    color:green;
+    font-weight: bold;
+}
+p{
+    margin-top:20px;
+    font-size:13px;
+    font-weight: bold;
+}
+.action{
+    display:flex;
+    border:1px solid rgba(0, 0, 0, 0.18);
+    border-bottom: none;
+    background-color:rgba(0, 0, 0, 0.18);
+}
+.login,.signup{
+    border : 3px solid green;
+    font-size:17px;
+    padding:10px;
+    width:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: none;
+    border-left:none;
+    border-right: none;
+    font-weight: bold;
+}
+.signup{
+    border-left-color: black;
+    border-top:1px solid rgba(0, 0, 0, 0.18);
+}
+.signup:hover,.login:hover{
+    cursor: pointer;
+}
+.login{
+    background-color: white;
+}
+.rem>a:hover,.lastline>a:hover,p>span>a:hover{
+    text-decoration:underline;
+    text-decoration-color: green;
+}
+.or{
+    display:flex;
+    align-items:center;
+    margin-bottom:5px;
+    font-size:18px;
+}
+.or1,.or2{
+    width:130px;
+    border:1px solid black;
+}
+.or1{
+    margin-right:5px;
+}
+.or2{
+    margin-left:5px;
+}
+/* robot class */
+.robot{
+    width:275px;
+    border:2px solid rgba(0, 0, 0, 0.111);
+    margin-bottom:10px;
+    height:30px;
+    padding:20px;
+    border-radius: 5px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color:rgba(0, 0, 0, 0.113);
+    display:none;
+}
+.captcha{
+    height: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.captcha span{
+    margin-top:2px;
+    font-weight: bold;
+    color:rgba(0, 0, 0, 0.498);
+}
+.s1{
+    font-size:12px;
+}
+.s2{
+    font-size:8px;
+}
+.captcha img{
+    width:30px;
+    height: 30px;
+}
+#chitti{/* */
+    width:20px;
+    height: 20px;
+    border:2px solid rgba(0, 0, 0, 0.468);
+}
+.checkbox{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:145px;
+}
+/*  */
+.institute{
+    display:none;
+}
+.img2{
+    border:none;
+    position: absolute;
+    margin-left:300px;
+    padding:10px;
+    width:20px;
+    height: 30px;
+}
+#loader{
+    border:5px;
+    width:20px;
+    height: 20px;
+    border-radius: 20px;
+    border-top:5px solid blue;
+    border-left:5px solid blue;
+    animation: spin 1s linear infinite;
+    display:none;
+}
+@keyframes spin{
+    100%{
+        transform : rotate(360deg);
+    }
+}
+#chitti:hover{
+    border-color:gray;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.checkbox img{
+    width:30px;
+    height: 30px;
+    display:none;
+}
