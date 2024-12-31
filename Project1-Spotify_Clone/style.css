@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Styling of play bar */
+.track{
+    background-color:rgba(0, 0, 0, 0.504);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width:20vw;
+    height: 20vh;
+}
+.container{
+    font-family:"Poppins", serif;
+    width:60vw;
+    height: 80vh;
+    border-radius: 20px;
+    /* margin:auto; */
+    margin-left:242px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:55px;
+    cursor:default;
+}
+.play{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20vw;
+}
+#Seek{
+    width:15vw;
+    height: 5px;
+    cursor:pointer;
+}
+.seek >p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    margin-top:3px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:15px;
+    margin-bottom:5px;
+}
+i{
+    font-size:20px;
+    cursor:pointer;
+}
+.playbtn{
+    width:30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px;
+    background-color:rgb(17, 235, 17);
+    padding:5px;
+    color:white;
+}
+.song_name{
+    display: flex;
+    justify-content: space-between;
+    width:18vw;
+    align-items: center;
+}
+.song_name>i{
+    font-size:25px;
+    color:white;
+    margin-right:3px;
+}
+#playtrack-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+@keyframes rotation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.songname{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:13vw;
+}
+.artist{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color:white;
+    font-size:12px;
+    margin-left:10px;
+    
+}
+.artist p{
+    font-size:13px;
+    font-weight: bold;
+    margin-top:7px;
+}
+.combine{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    margin-right: 20px;
+    z-index: 2;
+    width:50vw;
+}
+.playlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width:23vw;
+    background-color: rgba(0, 0, 0, 0.559);
+    height: 45vh;
+    border-radius: 10px;
+    overflow: auto;
+    overflow-x:hidden;
+}
+.playlist::-webkit-scrollbar,.playlist_0::-webkit-scrollbar{
+    background-color:transparent;
+}
+.playlist::-webkit-scrollbar-thumb,.playlist_0::-webkit-scrollbar-thumb{
+    background-color:rgb(91, 88, 88);
+    border-radius: 20px;
+}
+.card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:20vw;
+    height: 80px;
+    color:rgba(255, 255, 255, 0.647);
+    background-color: rgba(0, 0, 0, 0.421);
+    border-radius: 10px;
+    margin-bottom:10px;
+    margin-top:10px;
+}
+.card >img{
+    width:50px;
+    height: 50px;
+}
+.dis{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:-7px;
+}
+.dis h4{
+    margin-bottom: 5px;
+}
+.dis h6{
+    margin-top: 5px;
+}
+/* Setting background video */ 
+.bgvideo{
+    position: absolute;
+    left:250px;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-radius: 20px;
+    width:60vw;
+    height: 75vh;
+    z-index:1;
+}
+#bg-video{
+    border-radius: 20px;
+    position: absolute;
+    left:250px;
+    border-radius: 20px;
+    z-index: 0;
+    width:60vw;
+}
+/* styling playlist0 from here  */
+.playlist_0{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.55);
+    width:30vw;
+    height: 70vh;
+    z-index:3;
+}
+.list-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.636);
+    color:rgba(255, 255, 255, 0.542);
+    width:20vw;
+    border-radius:5px;
+    margin-top:20px;
+}
+.list-items:hover{
+    background-color:black;
+    cursor:pointer;
+}
+.list-items img{
+    width:60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-left:20px;
+}
+.list-name h4{
+    margin-bottom:5px;
+}
+.list-name h5{
+    margin-top:5px;
+}
+.card:hover{
+    background-color:black;
+}
+/*  */
+.time{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.time h5{
+    margin-top:15px;
+}
+.time i{
+    margin-top:20px;
+}
+.list-name{
+    width:14vw;
+}
