@@ -26,26 +26,27 @@
           <div class="play">
             <div class="seek">
               <input type="range" name="seek" id="Seek" min="0" max="100" value="0" />
-              <p><span class="s1">2:15</span><span class="s2">3:15</span></p>
+              <p><span class="s1">00:00</span><span class="s2">00:00
+              </span></p>
             </div>
             <div class="playbtn">
-              <i class="fa-solid fa-play playbutton"></i>
+              <i class="fa-solid fa-play" id="playbutton"></i>
             </div>
           </div>
           <div class="song_name">
             <div class="songname">
               <img
-                src="https://i.scdn.co/image/ab67616d0000b273da50894e074ecd5ce61de0a1"
-                alt="tamasha" id="playtrack-img"
+                src="https://thumbs.dreamstime.com/b/black-vinyl-record-lp-album-disc-black-vinyl-record-lp-album-disc-isolated-transparent-background-long-play-disk-129566327.jpg"
+                alt="img" id="playtrack-img"
               />
               <div class="artist">
-                <marquee behavior="scroll" direction="left"
-                  >Agar Tum Saath Ho - Tamasha</marquee
-                >
-                <p>alka yagnik,arijit singh</p>
+                <div class="marquee1">
+                  <div id="marquee"></div>
+                </div>
+                <p id="artists_name"></p>
               </div>
             </div>
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-heart" id="heart"></i>
           </div>
         </div>
         <!-- music track ends here -->
@@ -55,7 +56,7 @@
       src="https://kit.fontawesome.com/08ce2c1922.js"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="playlistHandling.js" type="module"></script> -->
     <script src="script.js" type="module"></script>
-    <script src="playlistHandling.js" type="module"></script>
   </body>
 </html>

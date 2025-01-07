@@ -73,7 +73,7 @@ i{
 #playtrack-img {
     width: 60px;
     height: 60px;
-    border-radius: 60px;
+    border-radius: 100%;
 }
 @keyframes rotation {
     from{
@@ -85,9 +85,9 @@ i{
 }
 .songname{
     display: flex;
-    justify-content: space-between;
+    /* justify-content:center; */
     align-items: center;
-    width:13vw;
+    width:12vw;
 }
 .artist{
     display: flex;
@@ -135,7 +135,7 @@ i{
 }
 .card{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width:20vw;
     height: 80px;
@@ -144,16 +144,17 @@ i{
     border-radius: 10px;
     margin-bottom:10px;
     margin-top:10px;
+    padding:0px 10px;
 }
 .card >img{
-    width:50px;
-    height: 50px;
+    width:60px;
+    height: 60px;
 }
 .dis{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left:-7px;
+    width: 180px;
 }
 .dis h4{
     margin-bottom: 5px;
@@ -219,6 +220,7 @@ i{
 }
 .card:hover{
     background-color:black;
+    cursor: pointer;
 }
 /*  */
 .time{
@@ -235,4 +237,21 @@ i{
 }
 .list-name{
     width:14vw;
+}
+#marquee {
+    display: inline-block;
+    animation: marquee 3s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+}
+.marquee1{
+    overflow: hidden;
+    white-space: nowrap;
+  box-sizing: border-box;
 }
