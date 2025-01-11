@@ -90,6 +90,7 @@ document.querySelector(".playlist_0").addEventListener("click", (event) => {
           document.getElementById("heart").style.color = "red";
           addingSong(0);
           removingSong(1);
+          removingSong(2);
         }
         break;
       case "Arijit":
@@ -98,8 +99,17 @@ document.querySelector(".playlist_0").addEventListener("click", (event) => {
           document.getElementById("heart").style.color = "white";
           addingSong(1);
           removingSong(0);
+          removingSong(2);
         }
         break;
+      case "Ghazals":
+        {
+          document.getElementById("heart").classList.replace("fa-solid","fa-regular");
+          document.getElementById("heart").style.color = "white";
+          addingSong(2);
+          removingSong(0);
+          removingSong(1);
+        }
     }
   }
 });

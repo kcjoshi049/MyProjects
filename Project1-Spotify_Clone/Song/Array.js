@@ -61,4 +61,22 @@ export const playlists = [
       }
     ],
   },
+  {
+    description:{
+      id: "Ghazals",
+      playlistName: "all time best Ghazals",
+      author: "kamal chandra joshi",
+      img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSJQeG0op9E7xPPcGe97LmFVYdH2pGQ1Vd2g&s",
+    },
+    songs:[
+      {
+        name: "hum tere shahar mein",
+        duration: { min: 7, sec: 7 },
+        singers: { male: "gulam ali", female: "" },
+        id: "./song/Ghazals/Hum tere shahar me.mp3",
+        img_url:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1GCGb5HYFQQmaPDu3PhEeOxKw1rSZbIJ1hA&s",
+      }
+    ]
+  }
 ];
