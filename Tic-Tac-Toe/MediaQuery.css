@@ -1,0 +1,46 @@
+@media  screen and (max-width : 1400px) {
+    .maincontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width:90vw;
+        height: 90vh;
+    }
+    .gameData{
+        justify-content: center;
+        margin-bottom: 200px;
+        width:80vw;
+    }
+    .gif{
+        width:20px;
+    }
+    .container{
+        grid-template-columns: repeat(3, 15vw);
+        grid-template-rows: repeat(3,15vw);
+    }
+    .box{
+        font-size:20px;
+    }
+    .btns{
+        width:80vw;
+        justify-content: space-between;
+    }
+    #reset{
+        margin-right:30px;
+        font-size:18px;
+        width:75px;
+        height: 75px;
+    }
+    h4{
+        font-size:25px;
+    }
+    .gif{
+        width:80vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vw;
+        margin-right: 30px;
+    }
+    
+}
