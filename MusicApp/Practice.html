@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-grid</title>
+    <style>
+        .container{
+            width:80vw;
+            height: 60vh;
+            margin:auto;
+            border:2px solid black;
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            /* grid-template-columns: [first]100px [second]100px [thrid]100px [fourth];
+            grid-template-rows:[pehla]100px [doosra]100px [teesra]100px [chutha]; */
+            /* row-gap:10px;
+            column-gap:20px; */
+            place-content: center;
+            grid-area: "nav nav nav"
+                       "empty artical artical"
+                       "footer footer footer"
+                       ;
+        }
+        /* .item-4,.item-1{
+            grid-column: first/second;
+            grid-row:pehla/doosra;
+        } */
+         .item-4{
+            grid-area: nav;
+         }
+         .item-5{
+                grid-area: nav;
+         }
+         .item-6{
+            grid-area: nav;
+         }
+         .item-1{
+grid-area: footer;
+         }
+         .item-2{
+grid-area: footer;
+         }
+         .item-3{
+            grid-area: footer;
+         }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border-radius: 100%; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box item-1" style="background-color: rgb(255, 68, 0);">first</div>
+        <div class="box item-2" style="background-color: rgb(79, 240, 4);">second</div>
+        <div class="box item-3" style="background-color: rgb(225, 255, 0);">third</div>
+        <div class="box item-4" style="background-color: rgb(0, 255, 225);">fourth</div>
+        <div class="box item-5" style="background-color: rgb(0, 149, 255);">fifth</div>
+        <div class="box item-6" style="background-color: rgb(119, 0, 255);">sixth</div>
+        <div class="box item-7" style="background-color: rgb(0, 251, 255);">seventh</div>
+        <div class="box item-8" style="background-color: rgb(255, 0, 157);">eighth</div>
+        <div class="box item-9" style="background-color: rgb(33, 149, 196);">nineth</div>
+    </div>
+</body>
+</html>
