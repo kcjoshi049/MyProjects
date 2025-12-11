@@ -8,35 +8,42 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI).then(()=>{
-    console.log("the database connected successfully.");
-}).catch((err)=>{
-    console.error("error :- ",err);
-})
+// Root route (fix for Cannot GET /)
+app.get("/", (req, res) => {
+  res.send("Food Delivery API is running");
+});
+
+// Connect to MongoDB Atlas
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("The database connected successfully.");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
 
 let FoodScheama = new mongoose.Schema({
-    id : Number,
-    name : String,
-    category : String,
-    rating : Number,
-    isVeg : Boolean,
-    img : String,
-    price : Number,
-    summary : String,
-    isTrending : Boolean
-})
+  id: Number,
+  name: String,
+  category: String,
+  rating: Number,
+  isVeg: Boolean,
+  img: String,
+  price: Number,
+  summary: String,
+  isTrending: Boolean
+});
 
-let FoodItem = mongoose.model("foodItem",FoodScheama,"Food_items");
+let FoodItem = mongoose.model("foodItem", FoodScheama, "Food_items");
 
-// now we will get the data in the api.
+// API route
+app.get("/fooditems", async (req, res) => {
+  let data = await FoodItem.find().sort({ id: 1 });
+  res.json(data);
+});
 
-app.get("/fooditems",async (req,res)=>{
-    let data = await FoodItem.find().sort({id : 1});
-    res.json(data);
-})
+const PORT = process.env.PORT || 5003;
 
-let PORT = process.env.PORT || 5003
-
-app.listen(PORT,()=>{
-    console.log("the api is running in the port number 5003");
-})
+app.listen(PORT, () => {
+  console.log(`API running on port ${PORT}`);
+});
