@@ -35,6 +35,8 @@ app.get("/fooditems",async (req,res)=>{
     res.json(data);
 })
 
-app.listen(5003,()=>{
+let PORT = process.env.PORT || 5003
+
+app.listen(PORT,()=>{
     console.log("the api is running in the port number 5003");
 })
