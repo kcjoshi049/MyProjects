@@ -1,0 +1,13 @@
+@import "tailwindcss";
+:root {
+  color: black;
+  background-color: rgba(47, 157, 225, 0.159);
+  /* background : linear-gradient(60deg, rgb(0, 0, 0), rgba(24, 2, 2, 0.699), black); */
+}
+
+
+::-webkit-scrollbar{
+  display : none;
+}
+
+
