@@ -1,22 +1,27 @@
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
-import { LuIndianRupee } from "react-icons/lu";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { userContext } from "../api/ContextApi";
 
 const FoodCard = ({ element }) => {
+  let { icon } = useContext(userContext);
   const emptyStarLoop = (stars, num) => {
     for (let i = 0; i < num; i++) {
-      stars.push(<FaRegStar key={`empty-${i}`} className="text-yellow-700" />);
+      stars.push(
+        <icon.fillStar key={`empty-${i}`} className="text-yellow-700" />
+      );
     }
   };
 
   const fillStarLoop = (stars, num) => {
     for (let i = 0; i < num; i++) {
-      stars.push(<FaStar key={`fill-${i}`} className="text-yellow-700" />);
+      stars.push(
+        <icon.emptyStar key={`fill-${i}`} className="text-yellow-700" />
+      );
     }
   };
 
   const fillHalfStar = (stars) => {
-    stars.push(<FaStarHalfAlt key={`half`} className="text-yellow-700" />);
+    stars.push(<icon.halfStar key={`half`} className="text-yellow-700" />);
   };
 
   const star = () => {
@@ -78,7 +83,7 @@ const FoodCard = ({ element }) => {
   {
     return (
       <NavLink
-        className="cursor-pointer hover:scale-95 duration-200 bg-linear-to-br from-black/50 via-black/20 to-white rounded-t-4xl px-5 shadow-xl shadow-black/20"
+        className="cursor-pointer hover:scale-95 duration-200 bg-linear-to-br from-black/50 via-black/20 to-white rounded-t-4xl px-5 shadow-xl shadow-black/20]"
         to={`/Product/${element.id}`}
         key={element.name}
       >
@@ -91,10 +96,11 @@ const FoodCard = ({ element }) => {
             alt={element.name}
             className="w-[200px] rounded-full self-center "
           />
-          <h2>{element.name}</h2>
-          <h1 className="flex  items-center text-[18px] gap-0.5">
-            {element.price} <LuIndianRupee size={16} />
-          </h1>
+          <h2 className="text-[18px]">{element.name}</h2>
+          <div className="flex gap-2">
+              <s className="text-3xl">&#8377;{element.price}</s>
+              <sub className="text-[17px] self-center">&#8377;{element.finalPrice}</sub>
+          </div>
           <div className="flex gap-1">{star()}</div>
         </div>
       </NavLink>
