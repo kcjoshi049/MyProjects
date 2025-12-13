@@ -94,7 +94,7 @@ const FoodCard = ({ element }) => {
           <img
             src={element.images.thumbnail}
             alt={element.name}
-            className="w-[200px] rounded-full self-center "
+            className="w-[200px] self-center "
           />
           <h2 className="text-[18px]">{element.name}</h2>
           <div className="flex gap-2">
