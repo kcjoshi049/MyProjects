@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 const PORT = process.env.PORT || 5003;
 // using routes
-app.get('/fooditems',route)
+app.use('/fooditems',route)
 
 let start = () =>{
   try{
