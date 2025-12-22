@@ -24,16 +24,12 @@ const Signup = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* MAIN CONTAINER */}
-      <div className="w-[80vw] m-auto h-screen flex flex-col mb-10 items-end pt-10 pr-15 relative">
+      <div className="w-[80vw] m-auto h-screen flex flex-col mb-10 items-end pt-10 pr-15 relative" style={{fontFamily:'"Josefin Sans", sans-serif'}}>
         {/* CARD */}
-        <div className="w-[30vw] pl-5 py-6 flex flex-col gap-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl">
+        <div className="w-[30vw] pl-5 py-6 flex flex-col gap-6 bg-black/50 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl">
           {/* LOGO + TEXT */}
           <div className="flex flex-col gap-2 text-white">
             <Logo />
-            <div className="flex flex-col gap-1">
-              <h1 className="text-2xl font-semibold">Welcome back!</h1>
-              <h3 className="text-white/80 ">We Are Happy To See You Again.</h3>
-            </div>
           </div>
 
           {/* TOGGLE BUTTON */}
@@ -62,7 +58,7 @@ const Signup = () => {
           </div>
 
           {/* FORM START */}
-          <form className="flex flex-col gap-3">
+          <form className="flex flex-col gap-5">
             {/* EMAIL FIELD */}
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -71,7 +67,7 @@ const Signup = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/70"
+                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/20"
                 required
               />
               <IoIosMail size={22} className="text-white/80" />
@@ -85,7 +81,7 @@ const Signup = () => {
               <input
                 type={showEye ? "text" : "password"}
                 placeholder="Enter password"
-                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/70"
+                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/20"
                 required
               />
               {showEye ? (
@@ -111,7 +107,7 @@ const Signup = () => {
               <input
                 type={eye ? "text" : "password"}
                 placeholder="Confirm password"
-                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/70"
+                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/20"
                 requireds
               />
               {eye ? (
@@ -141,7 +137,7 @@ const Signup = () => {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
-              className="flex justify-center items-center w-[25vw] bg-blue-600 h-10 rounded-3xl text-white text-[18px] shadow-lg"
+              className="flex justify-center items-center w-[25vw] bg-blue-600 h-10 rounded-3xl text-white text-[18px] shadow-lg cursor-pointer"
             >
               Signup
             </motion.button>

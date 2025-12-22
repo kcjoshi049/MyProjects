@@ -3,6 +3,7 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import route from './Routes/route.js';
 
 const app = express();
 app.use(cors());
@@ -22,28 +23,18 @@ mongoose.connect(process.env.MONGO_URI)
     console.error("MongoDB connection error:", err);
   });
 
-let FoodScheama = new mongoose.Schema({
-  id: Number,
-  name: String,
-  category: String,
-  rating: Number,
-  isVeg: Boolean,
-  img: String,
-  price: Number,
-  summary: String,
-  isTrending: Boolean
-});
-
-let FoodItem = mongoose.model("foodItem", FoodScheama, "Food_items");
-
-// API route
-app.get("/fooditems", async (req, res) => {
-  let data = await FoodItem.find().sort({ id: 1 });
-  res.json(data);
-});
-
 const PORT = process.env.PORT || 5003;
+// using routes
+app.get('/fooditems',route)
 
-app.listen(PORT, () => {
-  console.log(`API running on port ${PORT}`);
-});
+let start = () =>{
+  try{
+    app.listen(PORT, () => {
+      console.log(`API running on port ${PORT}`);
+    });
+  }catch(e){
+    console.log(e)
+  }
+}
+
+start();

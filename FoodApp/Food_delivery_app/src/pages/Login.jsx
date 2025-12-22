@@ -22,9 +22,9 @@ const Login = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* MAIN CONTAINER */}
-      <div className="w-[80vw] m-auto h-screen flex flex-col items-end pt-10 pr-15 relative">
+      <div className="w-[80vw] m-auto h-screen flex flex-col items-end pt-10 pr-15 relative" style={{fontFamily:'"Josefin Sans", sans-serif'}} >
         {/* CARD */}
-        <div className="w-[30vw] pl-5 py-6 flex flex-col gap-6 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-xl">
+        <div className="w-[30vw] pl-5 py-6 flex flex-col gap-6 bg-black/50 backdrop-blur-xl rounded-3xl border border-white/20 shadow-xl">
           {/* LOGO + TEXT */}
           <div className="flex flex-col gap-2">
             <Logo />
@@ -71,7 +71,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/70"
+                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/20"
                 required
               />
               <IoIosMail size={22} className="text-white/80" />
@@ -85,7 +85,7 @@ const Login = () => {
               <input
                 type={showEye ? "text" : "password"}
                 placeholder="Enter password"
-                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/70"
+                className="outline-none bg-transparent w-[20vw] text-white placeholder-white/20"
                 required
               />
               {showEye ? (
@@ -120,7 +120,7 @@ const Login = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.96 }}
               type="submit"
-              className="flex justify-center items-center w-[25vw] bg-blue-600 h-10 rounded-3xl text-white text-[18px] shadow-lg"
+              className="flex justify-center items-center w-[25vw] bg-blue-600 h-10 rounded-3xl text-white text-[18px] shadow-lg cursor-pointer"
             >
               Login
             </motion.button>
