@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import slides from "../assets/SlideShow_image";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import {NavLink} from 'react-router-dom';
 
 const CoverPage = () => {
   let [currentIndex, setCurrentIndex] = useState(0);
@@ -38,12 +39,14 @@ const CoverPage = () => {
             </p>
           </div>
           <div className="flex gap-5 mt-5">
+            <NavLink to={'/menu'}>
             <button
               className="bg-red-900 pl-5 pr-5 pt-2 pb-2 rounded-full text-[15px] cursor-pointer"
               style={{ fontFamily: '"Ubuntu", serif' }}
             >
               View Menu
             </button>
+            </NavLink>
             <button
               className="bg-gray-400/20 pl-5 pr-5 pt-2 pb-2 rounded-full text-[15px] cursor-pointer"
               style={{ fontFamily: '"Ubuntu", serif' }}

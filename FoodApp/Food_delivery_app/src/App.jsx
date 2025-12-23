@@ -1,59 +1,61 @@
-import Home from './pages/Home';
-import Menu from './pages/Menu';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import AppLayout from './Layout/AppLayout';
-import ErrorPage from './pages/ErrorPage';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import {ShopContext} from './api/ContextApi';
-import Product from './pages/Product';
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./Layout/AppLayout";
+import ErrorPage from "./pages/ErrorPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import { ShopContext } from "./api/ContextApi";
+import Product from "./pages/Product";
 
 const App = () => {
   const router = createBrowserRouter([
     {
-      path: '/',
-      element: <AppLayout />,
+      path: "/",
+      element: (
+        <ShopContext>
+          <AppLayout />
+        </ShopContext>
+      ),
       errorElement: <ErrorPage />,
-      children : [
+      children: [
         {
-          path : '/about',
-          element : <About />
+          path: "/about",
+          element: <About />,
         },
         {
-          path : '/menu',
-          element : <Menu />
+          path: "/menu",
+          element: <Menu />,
         },
         {
-          path : '/contact',
-          element : <Contact />
+          path: "/contact",
+          element: <Contact />,
         },
         {
-          path : '/log-in',
-          element : <Login />
+          path: "/log-in",
+          element: <Login />,
         },
         {
-          path : '/sign-up',
-          element : <Signup />
+          path: "/sign-up",
+          element: <Signup />,
         },
         {
-          path : '/',
-          element : <Home />
+          path: "/",
+          element: <Home />,
         },
         {
-          path: 'product/:productId',
-          element : <Product />
-        }
-      ]
-    }
+          path: "product/:productId",
+          element: <Product />,
+        },
+      ],
+    },
   ]);
 
   return (
-    <ShopContext>
-    <RouterProvider router={router} />
-    </ShopContext>
-  )
-}
+      <RouterProvider router={router} />
+  );
+};
 
-export default App
+export default App;

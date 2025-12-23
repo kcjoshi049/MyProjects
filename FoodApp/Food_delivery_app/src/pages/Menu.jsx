@@ -1,19 +1,13 @@
 import FoodCard from "../components/FoodCard";
-import { useState } from "react";
 import { useContext } from "react";
 import { userContext } from "../api/ContextApi";
+import foodCategories from "../assets/Category";
 
 const Menu = () => {
-  let {search,food_data} = useContext(userContext);
-  // find unique category.
-  let food_category = []; // array of all categories of food in the app.
-  food_data.forEach((elem) => {
-    if (!food_category.includes(elem.category)) {
-      food_category.push(elem.category);
-    }
-  });
+  let { search, food_data, currentCategory, setCurrentCategory } =
+    useContext(userContext);
+  
   // array for storing the value of selected category.
-  let [currentCategory, setCurrentCategory] = useState([]);
   let CategoryFunction = (e) => {
     let value = e.target.value;
     if (e.target.checked) {
@@ -45,18 +39,18 @@ const Menu = () => {
       <div className="w-[80vw] flex gap-15">
         {/* section to print get the category items. */}
         <div className="flex flex-col w-[10vw] pl-5 pt-5 pb-5 gap-2">
-          {food_category.map((elem) => {
+          {foodCategories.map((elem) => {
             return (
-              <div className="flex  gap-2">
+              <div className="flex  gap-2" key={elem.category}>
                 <input
                   type="checkbox"
                   name="category"
-                  id={elem}
-                  value={elem}
+                  id={elem.category}
+                  value={elem.category}
                   onChange={(e) => CategoryFunction(e)}
                 />
-                <label htmlFor={elem} className="cursor-pointer">
-                  {elem}
+                <label htmlFor={elem.category} className="cursor-pointer">
+                  {elem.category}
                 </label>
               </div>
             );
@@ -65,22 +59,13 @@ const Menu = () => {
         <div className="mt-15 ml-15">
           {/* code to get the list of items */}
           <div className="grid grid-cols-3 m-auto gap-10 ">
-            {food_data.map((elem) => {
-              if (currentCategory.length === 0) {
-                if(elem.name.toLowerCase().trim().includes(search.toLowerCase().trim())){
-                  return <FoodCard element={elem} key={elem.name} />
-                }
-                else{
-                  return;
-                }
-              } else {
-                if (currentCategory.includes(elem.category) && elem.name.toLowerCase().includes(search.toLowerCase())) {
-                  return <FoodCard element={elem} key={elem.name} />;
-                } else{
-                  return;
-                }
-              }
-            })}
+            {food_data
+              .filter((elem) => {
+                return elem.name.toLowerCase().trim().includes(search);
+              })
+              .map((elem) => {
+                return <FoodCard element={elem} key={elem.id} />;
+              })}
           </div>
         </div>
       </div>
