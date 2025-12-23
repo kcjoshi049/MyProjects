@@ -32,7 +32,7 @@ export const ShopContext = ({ children }) => {
     }).catch((err)=>{
         console.error("error :- ",err);
     })
-  },[query, currentCategory])
+  },[pathname, query])
 
   let handleSearch = (e) => {
     setSearch(e.target.value.toLowerCase().trim());
