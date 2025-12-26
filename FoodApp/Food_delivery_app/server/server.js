@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import route from './Routes/route.js';
+import router from './Routes/contactRoute.js';
 
 const app = express();
 app.use(cors());
@@ -26,7 +27,7 @@ mongoose.connect(process.env.MONGO_URI)
 const PORT = process.env.PORT || 5003;
 // using routes
 app.use('/fooditems',route)
-
+app.use('/contact',router)
 let start = () =>{
   try{
     app.listen(PORT, () => {

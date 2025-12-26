@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import { ShopContext } from "./api/ContextApi";
 import Product from "./pages/Product";
+import Admin from "./pages/Admin";
+import MyCart from "./pages/MyCart";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -49,6 +51,14 @@ const App = () => {
           path: "product/:productId",
           element: <Product />,
         },
+        {
+          path:"/admin",
+          element : <Admin />
+        },
+        {
+          path : '/cart',
+          element : <MyCart />
+        }
       ],
     },
   ]);

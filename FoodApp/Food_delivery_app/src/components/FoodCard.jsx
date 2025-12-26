@@ -92,7 +92,7 @@ const FoodCard = ({ element }) => {
           style={{ fontFamily: "Ubuntu" }}
         >
           <img
-            src={element.images.thumbnail}
+            // src={element.images.thumbnail}
             alt={element.name}
             className="w-full self-center rounded-4xl"
           />

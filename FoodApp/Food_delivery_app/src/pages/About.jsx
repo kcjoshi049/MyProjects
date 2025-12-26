@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
+import TopImage from "../components/TopImage";
 
 export default function About() {
+  let obj = {
+    url : "https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name : "About Us"
+  }
   return (
     <div className="w-[80vw] min-h-screen bg-white text-gray-800 m-auto mt-10">
       {/* Hero Section */}
-      <section className="w-[80vw] h-[60vh] bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504674900247-0877df9cc836')" }}>
-        <div className="bg-black/70 w-[80vw] h-full p-10  flex flex-col justify-center items-center">
-          <h1 className="text-4xl md:text-6xl font-semibold text-white tracking-wide" style={{fontFamily: '"Pacifico", cursive'}}>About Us</h1>
-          <p className="text-lg md:text-xl text-gray-200 mt-4" style={{fontFamily : "Ubuntu"}}>Crafting Exceptional Culinary Experiences</p>
-        </div>
-      </section>
+      <TopImage url={obj.url} name={obj.name}/>
 
       {/* Philosophy Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">

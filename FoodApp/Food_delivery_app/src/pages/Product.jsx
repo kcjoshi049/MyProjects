@@ -24,7 +24,7 @@ const Product = () => {
             {
               currentItem.tags.map((elem)=>{
                 return (
-                  <li>{elem}</li>
+                  <li key={elem}>{elem}</li>
                 )
               })
             }

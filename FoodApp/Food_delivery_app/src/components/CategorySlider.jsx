@@ -46,9 +46,9 @@ const CategorySlider = () => {
           return (
             <NavLink
               className={"shrink-0 w-[200px] select-none"}
-              key={val.name}
+              key={val.category}
             >
-              <div className="flex flex-col gap-2 items-center font-semibold hover:scale-105">
+              <div className="flex flex-col gap-2 items-center font-semibold hover:scale-105 transition-all ease-in">
                 <img
                   src={val.img}
                   alt={val.category}

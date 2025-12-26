@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { FaHome, FaChevronRight, FaHeadphones } from "react-icons/fa";
+import { FaHeadphones } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { motion } from "framer-motion";
+import TopImage from "../components/TopImage";
 
 const Contact = () => {
   // using useForm hook
@@ -29,38 +29,44 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, touchedFields },
   } = useForm({
     mode: "onTouched",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "https://food-delivery-api-r3y6.onrender.com/contact",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      alert(response.data.message || "Message sent successfully");
+      reset(); // clear form
+    } catch (error) {
+      console.error("Contact form error:", error);
+      alert("Failed to send message. Try again!");
+    }
   };
+  // top image
+  let obj = {
+    url: "https://media.istockphoto.com/id/639139850/photo/kitchen-table-with-a-knife-spices-herbs.jpg?s=612x612&w=0&k=20&c=X7wfgn9fI9XCtWPAyDWmBsLo1g8XgPYD1dJnXIJ4pTg=",
+    name: "Contact Us",
+  };
+
   return (
     <div
       className="w-[80vw] m-auto flex flex-col gap-20"
       style={{ fontFamily: '"Josefin Sans", sans-serif' }}
     >
-      <div className="bg-[url(https://media.istockphoto.com/id/639139850/photo/kitchen-table-with-a-knife-spices-herbs.jpg?s=612x612&w=0&k=20&c=X7wfgn9fI9XCtWPAyDWmBsLo1g8XgPYD1dJnXIJ4pTg=)] w-full h-[60vh] bg-cover mt-10  relative">
-        {/* image overlay */}
-        <div className="absolute w-full h-[60vh] bg-black/80 flex flex-col justify-center pl-10">
-          <h1 className="text-white text-[40px]">Contact Us</h1>
-          <div className="text-white flex gap-3 items-center ">
-            <NavLink
-              to={"/"}
-              className="flex gap-2 items-center hover:text-white/50 "
-            >
-              <FaHome size={27} className="mb-2" />
-              <h2 className=" text-[20px]">Home</h2>
-            </NavLink>
-            <FaChevronRight size={12} />
-            <h4 className="text-yellow-600">contact us</h4>
-          </div>
-        </div>
-      </div>
-      {/* locatiot, contact and mail section */}
+      <TopImage url={obj.url} name={obj.name} />
+      {/* location, contact and mail section */}
       <div className="flex justify-between">
         {box.map((elem) => {
           return (
@@ -146,13 +152,13 @@ const Contact = () => {
                       message: "Enter a valid number",
                     },
                     maxLength: {
-                      valueq: 10,
+                      value: 10,
                       message: "Enter a valid number",
                     },
-                    pattern:{
+                    pattern: {
                       value: /^[0-9]+$/,
                       message: "Enter a valid number",
-                    }
+                    },
                   })}
                   className="placeholder-black  px-3 h-[52px] bg-black/20 border-2 border-black/50 outline-none"
                 />

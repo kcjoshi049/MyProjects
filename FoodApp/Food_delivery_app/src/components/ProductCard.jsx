@@ -5,7 +5,17 @@ import { IoTriangle } from "react-icons/io5";
 
 
 const ProductCard = ({currentItem}) => {
-    let {icon} = useContext(userContext);
+    let {icon, dispatch, cartState } = useContext(userContext);
+
+    // cart handler function 
+    const cartHandler = () =>{
+      dispatch({
+        type: "ADD_TO_CART",
+        item : currentItem
+      })
+    }
+    console.log(cartState);
+    //
   return (
     <div className="flex flex-col gap-5 w-[20vw]">
       <h1 className="text-3xl font-medium ">{currentItem.name}</h1>
@@ -58,7 +68,7 @@ const ProductCard = ({currentItem}) => {
         </div>
       </div>
       {/* Add to cart button. */}
-      <button className="bg-violet-800 text-white py-2 rounded-2xl cursor-pointer hover:bg-violet-700 hover:scale-98">
+      <button className="bg-violet-800 text-white py-2 rounded-2xl cursor-pointer hover:bg-violet-700 hover:scale-98" onClick={cartHandler}>
         Add To Cart
       </button>
     </div>
